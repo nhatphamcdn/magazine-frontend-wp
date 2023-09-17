@@ -1,3 +1,5 @@
+import { INestedFlatData } from '@/types/utils'
+
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
   const menu_id = getRouterParam(event, "menu")
@@ -8,5 +10,16 @@ export default defineEventHandler(async (event) => {
       console.log(err);
     });
 
-  return res;
+  const data = res.map((item: any) : INestedFlatData => {
+    return {
+      id: item.ID,
+      parentId: item.menu_item_parent,
+      attrs: {
+        title: item.title,
+        type: item.type,
+      }
+    }
+  })
+
+  return data
 });
