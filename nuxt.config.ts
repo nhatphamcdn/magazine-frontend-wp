@@ -13,4 +13,10 @@ export default defineNuxtConfig({
   modules: [
     '@unocss/nuxt',
   ],
+  css: [
+    '@unocss/reset/tailwind.css',
+    '~/styles/default-theme.css',
+    '~/styles/vars.css',
+    '~/styles/global.css',
+  ],
 })
