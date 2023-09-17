@@ -10,4 +10,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     wpApiUrl: process.env.NUXT_WP_API_URL,
   },
+  modules: [
+    '@unocss/nuxt',
+  ],
 })
