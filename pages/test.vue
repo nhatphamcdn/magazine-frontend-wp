@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toNested } from '@/utils/to-nested'
+import toNested from '@/utils/to-nested'
 const { data } = await useFetch('/api/menus/47')
 
 const nestedMenus = toNested(data.value)

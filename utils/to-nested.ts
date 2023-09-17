@@ -1,6 +1,6 @@
 import { INestedFlatData } from '@/types/utils'
 
-export function toNested(flatData: INestedFlatData[], parentId: number|string = 0) {
+function toNested(flatData: INestedFlatData[], parentId: number|string = 0) {
   return flatData.reduce((r: INestedFlatData[], e) => {
     if (parentId == e.parentId) {
       const object = { ...e };
@@ -16,3 +16,5 @@ export function toNested(flatData: INestedFlatData[], parentId: number|string = 
     return r;
   }, []);
 }
+
+export default toNested
